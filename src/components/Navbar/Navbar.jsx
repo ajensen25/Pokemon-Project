@@ -40,9 +40,11 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <h2>
-          Pokemon<b>Info</b>
-        </h2>
+        <Link to="/" className="main-link">
+          <h2>
+            Pokemon<b>Info</b>
+          </h2>
+        </Link>
       </div>
       <div className="navbar-right">
         <Link to="/" className="navbar-link">

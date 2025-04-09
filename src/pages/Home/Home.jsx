@@ -1,6 +1,7 @@
 import bulbasaur from "../../assets/bulbasaur.png";
 import charmander from "../../assets/charmander.png";
 import squirtle from "../../assets/squirtle.png";
+import "./Home.css";
 
 function Home() {
   return (

@@ -1,0 +1,42 @@
+.home {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--black-color);
+}
+
+.home h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.home button {
+  background: orange;
+  color: black;
+  border: 1px solid var(--border-color);
+  border-radius: 100rem;
+  color: var(--black-color);
+  padding: 0.5rem 2rem;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.home button:hover {
+  background: var(--primary-color);
+}
+
+.home .card-container {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home .card-container img:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
