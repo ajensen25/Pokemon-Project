@@ -1,0 +1,28 @@
+.search {
+  color: var(--black-color);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.search h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.search p {
+  text-align: center;
+}
+
+.search input {
+  margin: 1rem 0;
+  border: 2px solid var(--border-color);
+  border-radius: 100rem;
+  background: var(--primary-color);
+  color: var(--black-color);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  outline: none;
+}
