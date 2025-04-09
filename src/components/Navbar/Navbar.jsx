@@ -4,9 +4,37 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const settingsList = useRef(null);
+  const themeIcon = useRef(null);
 
   const toggleSettings = () => {
     settingsList.current.classList.toggle("visible");
+  };
+
+  const toggleTheme = () => {
+    if (themeIcon.current.classList.contains("uil-sun")) {
+      themeIcon.current.classList.remove("uil-sun");
+      themeIcon.current.classList.add("uil-moon");
+      document.documentElement.style.setProperty("--primary-color", "white");
+      document.documentElement.style.setProperty(
+        "--primary-color-hover",
+        "rgb(240, 240, 240"
+      );
+      document.documentElement.style.setProperty("--border-color", "black");
+      document.documentElement.style.setProperty("--black-color", "black");
+    } else {
+      themeIcon.current.classList.remove("uil-moon");
+      themeIcon.current.classList.add("uil-sun");
+      document.documentElement.style.setProperty(
+        "--primary-color",
+        "rgb(45, 45, 45)"
+      );
+      document.documentElement.style.setProperty(
+        "--primary-color-hover",
+        "rgb(60, 60, 60)"
+      );
+      document.documentElement.style.setProperty("--border-color", "white");
+      document.documentElement.style.setProperty("--black-color", "white");
+    }
   };
 
   return (
@@ -27,8 +55,8 @@ function Navbar() {
           <i className="uil uil-setting"></i>
         </button>
         <ul className="settings-list" ref={settingsList}>
-          <li>
-            <i className="uil uil-sun"></i>Theme
+          <li onClick={toggleTheme}>
+            <i className="uil uil-sun" ref={themeIcon}></i>Theme
           </li>
           <li>
             <i className="uil uil-letter-english-a"></i>Font

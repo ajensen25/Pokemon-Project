@@ -18,8 +18,8 @@
   --primary-color: rgb(45, 45, 45);
   --primary-color-hover: rgb(60, 60, 60);
   --secondary-color: orange;
-  --border-color: rgb(255, 255, 255);
-  --black-color: rgb(255, 255, 255);
+  --border-color: white;
+  --black-color: white;
   --selected-font: "Poppins", serif;
 }
 
