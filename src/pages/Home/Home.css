@@ -12,6 +12,10 @@
   font-weight: 500;
 }
 
+.home p {
+  text-align: center;
+}
+
 .home button {
   background: orange;
   color: black;
@@ -39,4 +43,16 @@
   transform: scale(1.05);
   transition: 0.2s ease;
   cursor: pointer;
+}
+
+@media screen and (width <= 800px) {
+  .home .card-container {
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .home .card-container img {
+    width: 10rem;
+  }
 }
