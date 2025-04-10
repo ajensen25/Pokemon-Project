@@ -3,8 +3,9 @@ import "./Search.css";
 
 function Search() {
   const cardInput = useRef(null);
-  const [data, setData] = useState(false);
+  const errorDisplay = useRef(null);
 
+  const [data, setData] = useState(false);
   const URL = "https://pokeapi.co/api/v2/pokemon";
 
   const onInputPressed = (e) => {
@@ -20,13 +21,14 @@ function Search() {
       const res = await fetch(URL);
       const cardData = await res.json();
       setData({
-        name: cardData.name,
+        name: cardData.name[0].toUpperCase() + cardData.name.slice(1),
         image: cardData.sprites.front_default,
         stats: cardData.stats,
         abilities: cardData.abilities,
       });
+      errorDisplay.current.innerText = "";
     } catch (err) {
-      console.error("Failed to fetch API data", err);
+      errorDisplay.current.innerText = "Pokemon not found.";
     }
   };
 
@@ -46,41 +48,24 @@ function Search() {
         ref={cardInput}
         onKeyDown={onInputPressed}
       />
+      <p ref={errorDisplay}></p>
       {data && (
         <div className="data-container">
           <img src={data.image} alt="" />
           <h2>{data.name}</h2>
           <div className="card-info">
             <ul className="stats">
-              <li>
-                <b>HP:</b>
-                {data.stats[0].base_stat}
-              </li>
-              <li>
-                <b>Attack:</b>
-                {data.stats[1].base_stat}
-              </li>
-              <li>
-                <b>Defense:</b>
-                {data.stats[2].base_stat}
-              </li>
-              <li>
-                <b>Spec. Attack:</b>
-                {data.stats[3].base_stat}
-              </li>
-              <li>
-                <b>Spec. Defense:</b>
-                {data.stats[4].base_stat}
-              </li>
-              <li>
-                <b>Speed:</b>
-                {data.stats[5].base_stat}
-              </li>
+              {data.stats.map((stat, index) => (
+                <li key={index} id={"index" + index}>
+                  <b>{stat.stat.name.toUpperCase()}:</b> {stat.base_stat}
+                </li>
+              ))}
             </ul>
             <ul className="abilities">
               {data.abilities.map((ability, index) => (
                 <li key={index}>
-                  <b>Ability {index + 1}:</b> {ability.ability.name}
+                  <b>ABILITY {index + 1}:</b>{" "}
+                  {ability.ability.name.toUpperCase()}
                 </li>
               ))}
             </ul>

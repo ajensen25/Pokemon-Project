@@ -26,3 +26,58 @@
   font-size: 1rem;
   outline: none;
 }
+
+.search .data-container {
+  background: var(--primary-color-hover);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.data-container img {
+  width: 13rem;
+  object-fit: fill;
+}
+
+.data-container h2 {
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+
+.data-container .card-info {
+  display: flex;
+  gap: 3rem;
+}
+
+.card-info .stats {
+  list-style: none;
+}
+
+#index0 b {
+  color: rgb(22, 186, 0);
+}
+#index1 b {
+  color: red;
+}
+#index2 b {
+  color: rgb(66, 66, 255);
+}
+#index3 b {
+  color: rgba(255, 0, 0, 0.5);
+}
+#index4 b {
+  color: rgba(0, 0, 255, 0.5);
+}
+#index5 b {
+  color: rgb(149, 149, 0);
+}
+
+.card-info .abilities {
+  list-style: none;
+}
